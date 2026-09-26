@@ -1,0 +1,5 @@
+# idp-api prod 배포 상태 — Jenkins 범프 잡(gitops-prod-image-bump)이 자동 갱신
+# 차트·환경설정은 prj-devops helm/applications/idp-api 에서 관리
+idp-api:
+  image:
+    tag: "95644d7355b4"

@@ -1,0 +1,5 @@
+# core-api prod 배포 상태 — Jenkins 범프 잡(gitops-prod-image-bump)이 자동 갱신
+# 차트·환경설정은 prj-devops helm/applications/core-api 에서 관리
+core-api:
+  image:
+    tag: "5bbb5e3e8a9f"

@@ -1,0 +1,5 @@
+# tool-storybook prod 배포 상태 — Jenkins 범프 잡(gitops-prod-image-bump)이 자동 갱신
+# 차트·환경설정은 prj-devops helm/applications/tool-storybook 에서 관리
+tool-storybook:
+  image:
+    tag: "22"
