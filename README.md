@@ -24,7 +24,13 @@ prod/<앱이름>.yaml   # 각 파일은 <앱>.image.tag 한 줄이 전부
 ## 롤백
 
 prj-devops의 `scripts/rollback.sh --app <앱>` 을 실행하면 이 저장소에서
-최신 범프 커밋을 revert해 이전 이미지로 되돌린다. (수동: `git revert <범프 커밋>` 후 push)
+최신 범프 커밋을 revert해 이전 이미지로 되돌린다 — `--steps N`으로 N단계 롤백,
+`--dry-run`으로 결과 시뮬레이션. 수동 롤백은 `git revert <범프 커밋>` 후 push.
+
+## 관련 문서
+
+- [prj-devops — Jenkins GitOps 이미지 범프 가이드](https://github.com/kimjoongwon/prj-devops/blob/main/docs/jenkins-gitops-image-bump.md)
+- [prj-devops — ArgoCD 웹훅/운영 가이드](https://github.com/kimjoongwon/prj-devops/blob/main/docs/argocd-prod-only-webhook-manual.md)
 
 ## 원칙
 
