@@ -2,4 +2,4 @@
 # 차트·환경설정은 prj-devops helm/applications/core-api 에서 관리
 core-api:
   image:
-    tag: "5bbb5e3e8a9f"
+    tag: "e535e2cdc37d"
