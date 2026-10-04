@@ -3,4 +3,4 @@
 # 초기 태그는 prod 현재 값에서 복제(부트스트랩) — 첫 stg 빌드 범프로 실제 stg 이미지로 대체됨
 admin-web:
   image:
-    tag: "27bca868c4cd"
+    tag: "68fc2ca75bd2"
