@@ -1,0 +1,6 @@
+# idp-web stg 배포 상태 — Jenkins 범프 잡(gitops-prod-image-bump, DEPLOY_ENV=stg)이 자동 갱신
+# 차트·환경설정은 prj-devops helm/applications/idp-web 에서 관리
+# 초기 태그는 prod 현재 값에서 복제(부트스트랩) — 첫 stg 빌드 범프로 실제 stg 이미지로 대체됨
+idp-web:
+  image:
+    tag: "11762ded2707"

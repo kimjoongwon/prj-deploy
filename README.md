@@ -7,25 +7,29 @@ GitOps 배포 기록 저장소. **이미지 태그만** 여기에 있고, 차트
 
 ```
 prod/<앱이름>.yaml   # 각 파일은 <앱>.image.tag 한 줄이 전부
+stg/<앱이름>.yaml    # 동일 형식 (stg는 서비스 앱만 존재 — 2026-10-04 stg 축소)
 ```
 
 지원 앱: idp-api, idp-web, core-api, admin-web, proposal-web, tool-storybook
+stg 전용: idp-api, idp-web, core-api, admin-web (proposal-web/tool-storybook은 운영 전용)
 
 ## 동작 방식
 
 1. Jenkins가 앱을 빌드해 Harbor에 push하면 `gitops-prod-image-bump` 잡이
    대응하는 `prod/<앱>.yaml`의 태그를 새 SHA로 커밋/푸시한다 (커밋 메시지:
-   `ci(gitops): bump <앱> image to <태그>`).
+   `ci(gitops): bump <앱> image to <태그>`). stg 빌드(BRANCH_NAME=stg)는
+   `stg/<앱>.yaml`을 갱신하고 커밋 메시지는 `ci(gitops): bump stg/<앱> image to <태그>`.
 2. GitHub 웹훅 → ArgoCD가 각 앱 Application(multi-source)에서
-   `$values/prod/<앱>.yaml`을 추가 values로 읽어 배포한다.
+   `$values/{prod,stg}/<앱>.yaml`을 추가 values로 읽어 배포한다.
 3. 이 저장소의 git log가 곧 **플랫폼 전체의 순수 배포 기록**이다.
-   앱별 기록은 `git log --oneline -- prod/<앱>.yaml`.
+   앱별 기록은 `git log --oneline -- prod/<앱>.yaml` (stg는 `stg/<앱>.yaml`).
 
 ## 롤백
 
 prj-devops의 `scripts/rollback.sh --app <앱>` 을 실행하면 이 저장소에서
 최신 범프 커밋을 revert해 이전 이미지로 되돌린다 — `--steps N`으로 N단계 롤백,
-`--dry-run`으로 결과 시뮬레이션. 수동 롤백은 `git revert <범프 커밋>` 후 push.
+`--dry-run`으로 결과 시뮬레이션, `--env stg`로 stg 롤백.
+수동 롤백은 `git revert <범프 커밋>` 후 push.
 
 ## 관련 문서
 
