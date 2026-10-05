@@ -2,4 +2,4 @@
 # 차트·환경설정은 prj-devops helm/applications/idp-web 에서 관리
 idp-web:
   image:
-    tag: "27bca868c4cd"
+    tag: "a0b72b944708"
