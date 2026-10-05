@@ -2,4 +2,4 @@
 # 차트·환경설정은 prj-devops helm/applications/tool-storybook 에서 관리
 tool-storybook:
   image:
-    tag: "b8e6b585832d"
+    tag: "a0b72b944708"
