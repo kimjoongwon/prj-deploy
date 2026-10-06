@@ -2,6 +2,8 @@
 
 이미지 태그 상태 저장소. ArgoCD가 각 앱 Application에서 `prod|stg/<앱>.yaml`의 `tag:`를 읽는다 (multi-source).
 
+> 진입점: `~/dev/AGENTS.md`(워크스페이스 지도) · 시크릿 지식: OpenBao `secret/docs/*` (열쇠: `~/dev/onjitda-credentials.md`)
+
 ## 규칙
 
 1. **범프(태그 변경)는 Jenkins `gitops-prod-image-bump` 잡 전용** — 일반적으로 직접 커밋 금지.
