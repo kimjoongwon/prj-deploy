@@ -2,4 +2,4 @@
 # 차트·환경설정은 prj-devops helm/applications/proposal-web 에서 관리
 proposal-web:
   image:
-    tag: "cf27ccca2517"
+    tag: "7619272f04c9"
