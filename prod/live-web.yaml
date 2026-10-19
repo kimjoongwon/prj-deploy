@@ -1,0 +1,7 @@
+# live-web prod 배포 상태 — Jenkins 범프 잡(gitops-prod-image-bump)이 이후 자동 갱신
+# 차트·환경설정은 prj-devops helm/applications/live-web 에서 관리
+# 최초 생성(2026-10-19): 앱 신설로 파일이 없어 첫 빌드(7bf7454fcda4) 태그로 수동 생성 —
+# 범프 잡 전용 규칙의 예외(수동 개입 사유 기록)
+live-web:
+  image:
+    tag: "7bf7454fcda4"
