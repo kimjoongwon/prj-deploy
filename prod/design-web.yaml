@@ -1,0 +1,6 @@
+# design-web prod 배포 상태 — Jenkins 범프 잡(gitops-prod-image-bump)이 자동 갱신
+# 차트·환경설정은 prj-devops helm/applications/design-web 에서 관리
+# 최초 생성(2026-10-22): PR #44 main 머지 커밋 태그로 수동 생성 — 이후 자동 범프
+design-web:
+  image:
+    tag: "ec18439d7f80"
