@@ -10,8 +10,14 @@ prod/<앱이름>.yaml   # 각 파일은 <앱>.image.tag 한 줄이 전부
 stg/<앱이름>.yaml    # 동일 형식 (stg는 서비스 앱만 존재 — 2026-10-04 stg 축소)
 ```
 
-지원 앱: idp-api, idp-web, core-api, admin-web, proposal-web, tool-storybook
-stg 전용: idp-api, idp-web, core-api, admin-web (proposal-web/tool-storybook은 운영 전용)
+운영 지원 앱: idp-api, idp-web, core-api, admin-web, proposal-web, design-web,
+live-web, tool-storybook, dolmen-api, dolmen-web (10개)
+stg 지원 앱: idp-api, idp-web, core-api, admin-web, dolmen-api, dolmen-web (6개)
+
+Dolmen 운영 태그는 2026-10-23 최초 등록했다. 초기 태그는 Harbor에서 실제 확인한
+기존 prod 이미지이며, 신규 Application은 main 승격 빌드의 Jenkins 범프가 완료된 뒤 연결한다.
+이후 main 빌드·범프는 기존 파이프라인을 사용한다.
+운영 연결은 [Dolmen prod 런북](https://github.com/kimjoongwon/prj-devops/blob/main/docs/dolmen-prod-runbook.md)을 따른다.
 
 ## 동작 방식
 
@@ -39,4 +45,5 @@ prj-devops의 `scripts/rollback.sh --app <앱>` 을 실행하면 이 저장소�
 ## 원칙
 
 - 이 저장소에는 **태그 외에는 아무 것도 넣지 않는다** (운영 설정은 prj-devops).
-- 사람이 직접 커밋하는 경우는 롤백뿐이라고 가정한다.
+- 일반 태그 변경은 Jenkins 잡이 수행한다. 사람의 변경은 롤백 또는 검증한 이미지의
+  신규 앱 최초 등록으로 한정하고 PR로 검토한다.
