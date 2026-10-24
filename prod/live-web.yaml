@@ -4,4 +4,4 @@
 # 범프 잡 전용 규칙의 예외(수동 개입 사유 기록)
 live-web:
   image:
-    tag: "e9f8c079e048"
+    tag: "bf04390f2f1e"
