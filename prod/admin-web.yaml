@@ -2,4 +2,4 @@
 # 차트·환경설정은 prj-devops helm/applications/admin-web 에서 관리
 admin-web:
   image:
-    tag: "4380fab57ed1"
+    tag: "d3d420194586"
