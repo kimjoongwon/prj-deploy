@@ -2,4 +2,4 @@
 # 차트·환경설정은 prj-devops helm/applications/idp-api 에서 관리
 idp-api:
   image:
-    tag: "4f3dc3f22ea2"
+    tag: "d1f39a0ecd8e"
