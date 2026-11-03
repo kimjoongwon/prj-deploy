@@ -3,4 +3,4 @@
 # 이후 태그 변경은 gitops-prod-image-bump 잡 전용이다.
 dolmen-web:
   image:
-    tag: "3d77065bf001"
+    tag: "99dc4cd3e989"
