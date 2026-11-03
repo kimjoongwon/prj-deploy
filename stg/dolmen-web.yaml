@@ -4,4 +4,4 @@
 # 범프 잡의 "Values file not found" 실패를 방지한다
 dolmen-web:
   image:
-    tag: "3ff00d5969b5"
+    tag: "b92d9055a530"
